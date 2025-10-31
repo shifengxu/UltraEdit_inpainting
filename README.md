@@ -42,9 +42,18 @@ Our analysis further confirms the crucial role of real image anchors and region-
 **Setup:** 
 
 ```
-pip install -r requirements
+conda create --name UltraEdit python=3.12.3
+conda activate UltraEdit
+conda install pytorch torchvision cudatoolkit -c pytorch -c nvidia
+pip install -r requirements.txt
 
-cd diffusers && pip install -e .
+cd diffusers
+pip install -e .
+cd ..
+
+pip install protobuf
+
+python -u main.py
 ```
 
 ### Training with stable-diffusion3
